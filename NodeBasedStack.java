@@ -30,7 +30,7 @@ public class NodeBasedStack<T> {
   Node top;
   int size;
 
-  public nodeBasedStack(){
+  public void nodeBasedStack() {
     top = null;
     size = 0;
   }
@@ -55,6 +55,8 @@ public class NodeBasedStack<T> {
       throw new EmptyStackException();
     } else {
       data = top.getData();
+      Node tmp = top;
+      top = top.getNext();
       tmp.setNext(null);
       size--;
     }
@@ -69,5 +71,19 @@ public class NodeBasedStack<T> {
       data = top.getData();
     }
     return data;
+  }
+
+  public static void main(String[] args) {
+    NodeBasedStack<Integer> stack = new NodeBasedStack<>();
+    stack.push(5);
+    System.out.println(stack.peek());
+    stack.push(8);
+    System.out.println(stack.peek());
+    stack.push(67);
+    System.out.println(stack.peek());
+    stack.pop();
+    System.out.println(stack.peek());
+    stack.pop();
+    System.out.println(stack.peek());
   }
 }
