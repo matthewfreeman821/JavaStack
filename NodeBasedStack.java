@@ -5,7 +5,7 @@ public class NodeBasedStack<T> {
     T data;
     Node next;
 
-    public Node(T val, Node n) {
+    public void Node(T val, Node n) {
       data = val;
       next = n;
     }
@@ -18,12 +18,12 @@ public class NodeBasedStack<T> {
       return data;
     }
 
-    public Node getNext() {
-      return next;
-    }
-
     public void setNext(Node n) {
       next = n;
+    }
+
+    public Node getNext() {
+      return next;
     }
   }
 
@@ -39,10 +39,6 @@ public class NodeBasedStack<T> {
     return top == null;
   }
 
-  public int size() {
-    return size;
-  }
-
   public void push(T val) {
     Node node = new Node(val, top);
     top = node;
@@ -52,7 +48,7 @@ public class NodeBasedStack<T> {
   public T pop() {
     T data = null;
     if (isEmpty()) {
-      throw new EmptyStackException();
+      throw new RuntimeException("Stack is empty");
     } else {
       data = top.getData();
       Node tmp = top;
@@ -66,7 +62,7 @@ public class NodeBasedStack<T> {
   public T peek() {
     T data = null;
     if (isEmpty()) {
-      throw new EmptyStackException();
+      throw new RuntimeException("Stack is empty");
     } else {
       data = top.getData();
     }
