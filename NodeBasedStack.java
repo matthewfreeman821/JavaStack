@@ -1,11 +1,9 @@
-import java.util.EmptyStackException;
-
 public class NodeBasedStack<T> {
   private class Node {
     T data;
     Node next;
 
-    public void Node(T val, Node n) {
+    public Node(T val, Node n) {
       data = val;
       next = n;
     }
@@ -30,7 +28,7 @@ public class NodeBasedStack<T> {
   Node top;
   int size;
 
-  public void nodeBasedStack() {
+  public NodeBasedStack() {
     top = null;
     size = 0;
   }
@@ -39,24 +37,14 @@ public class NodeBasedStack<T> {
     return top == null;
   }
 
+  public int size() {
+    return size;
+  }
+
   public void push(T val) {
     Node node = new Node(val, top);
     top = node;
     size++;
-  }
-
-  public T pop() {
-    T data = null;
-    if (isEmpty()) {
-      throw new RuntimeException("Stack is empty");
-    } else {
-      data = top.getData();
-      Node tmp = top;
-      top = top.getNext();
-      tmp.setNext(null);
-      size--;
-    }
-    return data;
   }
 
   public T peek() {
@@ -69,17 +57,39 @@ public class NodeBasedStack<T> {
     return data;
   }
 
+  public T pop() {
+    T data = null;
+    if (isEmpty()) {
+      throw new RuntimeException("Stack is empty");
+    } else {
+      data = top.getData();
+      Node tmp = top;
+      top = top.getNext();
+      tmp.setNext(null);
+    }
+    return data;
+  }
+
   public static void main(String[] args) {
     NodeBasedStack<Integer> stack = new NodeBasedStack<>();
-    stack.push(5);
+    stack.push(1);
     System.out.println(stack.peek());
-    stack.push(8);
+    System.out.println(stack.size);
+    stack.push(2);
     System.out.println(stack.peek());
-    stack.push(67);
+    System.out.println(stack.size);
+    stack.push(3);
+    System.out.println(stack.peek());
+    System.out.println(stack.size);
+    stack.pop();
+    System.out.println(stack.peek());
+    System.out.println(stack.size);
+    stack.push(4);
     System.out.println(stack.peek());
     stack.pop();
     System.out.println(stack.peek());
+    System.out.println(stack.size);
     stack.pop();
-    System.out.println(stack.peek());
+    stack.pop();
   }
 }
