@@ -41,8 +41,8 @@ public class NodeBasedStack<T> {
     return size;
   }
 
-  public void push(T val) {
-    Node node = new Node(val, top);
+  public void push(T data) {
+    Node node = new Node(data, top);
     top = node;
     size++;
   }
@@ -72,6 +72,7 @@ public class NodeBasedStack<T> {
 
   public static void main(String[] args) {
     NodeBasedStack<Integer> stack = new NodeBasedStack<>();
+
     stack.push(1);
     System.out.println(stack.peek());
     System.out.println(stack.size);
