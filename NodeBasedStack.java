@@ -92,5 +92,6 @@ public class NodeBasedStack<T> {
     System.out.println(stack.size);
     stack.pop();
     stack.pop();
+    stack.pop();
   }
 }
