@@ -66,6 +66,7 @@ public class NodeBasedStack<T> {
       Node tmp = top;
       top = top.getNext();
       tmp.setNext(null);
+      size--;
     }
     return data;
   }
