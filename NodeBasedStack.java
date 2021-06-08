@@ -8,20 +8,16 @@ public class NodeBasedStack<T> {
       next = n;
     }
 
-    public void setData(T val) {
-      data = val;
-    }
-
     public T getData() {
       return data;
     }
 
-    public void setNext(Node n) {
-      next = n;
-    }
-
     public Node getNext() {
       return next;
+    }
+
+    public void setNext(Node n) {
+      next = n;
     }
   }
 
@@ -63,10 +59,9 @@ public class NodeBasedStack<T> {
       throw new RuntimeException("Stack is empty");
     } else {
       data = top.getData();
-      Node tmp = top;
       top = top.getNext();
-      tmp.setNext(null);
       size--;
+
     }
     return data;
   }

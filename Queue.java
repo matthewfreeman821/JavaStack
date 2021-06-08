@@ -1,9 +1,9 @@
 public class Queue {
-  private class QNode {
-    int key;
+  private class QNode<T> {
+    T key;
     QNode next;
 
-    public QNode(int key) {
+    public QNode(T key) {
       this.key = key;
       this.next = null;
     }
@@ -15,7 +15,7 @@ public class Queue {
     this.front = this.rear = null;
   }
 
-  public void enqueue(int key) {
+  public void enqueue(T key) {
     QNode temp = new QNode(key);
 
     if (this.rear == null) {
