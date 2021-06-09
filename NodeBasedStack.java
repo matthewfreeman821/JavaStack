@@ -66,6 +66,20 @@ public class NodeBasedStack<T> {
     return data;
   }
 
+  public booelan contains(T val) {
+    Node tmp = top.getData();
+    if (isEmpty()) {
+      throw new RuntimeException("Stack is empty");
+    }
+    while (tmp != null) {
+      if (tmp.getData() == val) {
+        return true;
+      }
+      tmp = tmp.getNext();
+    }
+    return false;
+  }
+
   public static void main(String[] args) {
     NodeBasedStack<Integer> stack = new NodeBasedStack<>();
 
