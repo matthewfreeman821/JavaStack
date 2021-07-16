@@ -38,5 +38,7 @@ public class Queue {
     }
   }
 
-  // Need to add main method to test Queue
+  public static void main(String[] args) {
+    System.out.println("Hello from main method");
+  }
 }
