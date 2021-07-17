@@ -39,6 +39,6 @@ public class Queue {
   }
 
   public static void main(String[] args) {
-    System.out.println("Hello from main method");
+    System.out.println(Queue.class.getName());
   }
 }
