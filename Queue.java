@@ -1,4 +1,6 @@
 public class Queue {
+
+  // Need to have an add method to add to the Queue
   private class QNode<T> {
     T key;
     QNode next;
