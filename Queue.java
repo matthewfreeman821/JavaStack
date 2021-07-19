@@ -41,6 +41,8 @@ public class Queue {
   }
 
   public static void main(String[] args) {
-    System.out.println(Queue.class.getName());
+    int firstVal = 0;
+    int secondVal = 1;
+    System.out.println();
   }
 }
