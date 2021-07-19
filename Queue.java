@@ -43,6 +43,7 @@ public class Queue {
   public static void main(String[] args) {
     int firstVal = 0;
     int secondVal = 1;
+    QNode(firstVal);
     System.out.println();
   }
 }
