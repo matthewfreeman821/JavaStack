@@ -44,6 +44,6 @@ public class Queue {
     int firstVal = 0;
     int secondVal = 1;
     QNode(firstVal);
-    System.out.println();
+    System.out.println(QNode(firstVal));
   }
 }
